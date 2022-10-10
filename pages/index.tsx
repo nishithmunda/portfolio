@@ -7,6 +7,7 @@ import { SectionHeader } from "../components/CommonComponents/SectionHeader";
 import { SkillSection } from "../components/Skills/SkillSection";
 import { Experience } from "../components/Experience/Experience";
 import { GitHub } from "../components/Github/GitHub";
+import { ContactSection } from "../components/Contact/ContactSection";
 
 
 function Home() {
@@ -24,6 +25,8 @@ function Home() {
       <SkillSection />
       <Experience />
       <GitHub/>
+      <ContactSection/>
+      <Header />
     </PortFolio>
   );
 }

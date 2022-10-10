@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { SkillImage } from "../../icons/SkillImage";
 import { SectionHeader } from "../CommonComponents/SectionHeader";
 import { skill } from "../data";
+import Image from "next/image";
 
 export function SkillSection() {
   return (
@@ -19,7 +20,9 @@ export function SkillSection() {
               <ItemContainer>
                 {skill.map((val) => (
                   <SkillCardItem>
-                    <SkillIcon>{val?.icon}</SkillIcon>
+                    <SkillIcon>
+                      <Image src={val?.icon} layout="fill" objectFit="cover" />
+                    </SkillIcon>
                     <SkillName>{val?.name}</SkillName>
                   </SkillCardItem>
                 ))}
@@ -51,9 +54,11 @@ const SkillList = styled.div`
   height: 650px;
 `;
 const SkillIcon = styled.div`
-  width:30px;
+  position: relative;
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
-`
+`;
 const SkillName = styled.div`
   font-family: "Plus Jakarta Sans", sans-serif;
   font-style: normal;

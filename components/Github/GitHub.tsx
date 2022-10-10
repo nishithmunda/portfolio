@@ -1,15 +1,24 @@
 import styled from "styled-components";
 const bg = require("../../Assets/background.jpg");
 import Image from "next/image";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 export function GitHub() {
+  const router = useRouter();
   return (
     <ImageContainer>
       <ImageFrame>
         <GitInfo>
-          <HeadingText>Development <br/> Repository</HeadingText>
+          <HeadingText>
+            Development <br /> Repository
+          </HeadingText>
           <Text>It currently has around 5 best projects</Text>
-          <GitButton>Visit My Github</GitButton>
+          <GitButton>
+            <Link href={`https://github.com/nishithmunda`}>
+              <a target="_blank">Visit My Github</a>
+            </Link>
+          </GitButton>
         </GitInfo>
         <Image src={bg} layout="fill" objectFit="cover" />
       </ImageFrame>
@@ -35,9 +44,13 @@ const ImageFrame = styled.div`
 `;
 
 export const GitInfo = styled.div`
+  width: fit-content;
+  height: fit-content;
   position: absolute;
-  right: 0;
+  right: 40px;
   top: 0;
+  bottom: 0;
+  margin: auto 0;
   z-index: 1;
 `;
 export const HeadingText = styled.div`

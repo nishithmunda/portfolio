@@ -1,45 +1,51 @@
 export const skill = [
   {
-    icon: "",
+    icon: "/html.png",
     name: "HTML",
   },
   {
-    icon: "",
+    icon: "/css.png",
     name: "CSS",
   },
   {
-    icon: "",
+    icon: "/js.png",
     name: "Javascript",
   },
   {
-    icon: "",
+    icon: "/react.png",
     name: "React",
   },
   {
-    icon: "",
+    icon: "/redux.png",
     name: "Redux",
   },
   {
-    icon: "",
+    icon: "/typescript.png",
     name: "Typescript",
   },
 ];
 
-export const experience=[
-    {
-        duration:'Sep2021 - Present',
-        company:{name:'Winuall',designation:'SDE-1'},
-        summary:'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
-    },
-    {
-        duration:'Aug2021',
-        company:{name:'Winuall',designation:'Frontend Intern'},
-        summary:'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
-    },
-    {
-        duration:'Jan2021 - Mar2021',
-        company:{name:'Clustrex Data',designation:'Frontend Intern'},
-        summary:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-    },
-
-]
+export const experience = [
+  {
+    duration: "Aug2021 - Present",
+    company: { name: "Winuall", designation: "SDE-1" },
+    summary: [
+      `Developed a Content library to share tutor notes and videos, using React and styled-components, which has
+       been used by more than 5000 people.`,
+      `Contributed to Wiuall’s Win-D design system.`,
+      `Built an announcement system using Micro Frontend that tutors could use to send announcements to their
+       students.`,
+      `Created a Fee Management system using React, Redux, and styled-components for scheduling and managing
+       student fees`,
+      `Developed 2 internal tools for the engineering team to create picture-in-picture for mobile app and surveys
+       creation, using JS and HTML`,
+    ],
+  },
+  {
+    duration: "Jan2021 - Mar2021",
+    company: { name: "Clustrex Data", designation: "Frontend Intern" },
+    summary: [
+      `Refactored Javascript, HTML , jQuery application to React.`,
+    ],
+  },
+];

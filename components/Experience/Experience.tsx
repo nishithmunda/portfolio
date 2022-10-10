@@ -20,7 +20,14 @@ export function Experience() {
                   <DesignationText>{exp?.company?.designation}</DesignationText>
                 </ExperienceCompany>
                 <ExperienceSummary>
-                  <Text>{exp?.summary}</Text>
+                  {exp?.summary.map((text) => {
+                    return (
+                      <>
+                        <Text> - {text}</Text>
+                        <Space />
+                      </>
+                    );
+                  })}
                 </ExperienceSummary>
               </ExperienceSectionItem>
             </ExperienceSection>
@@ -46,7 +53,7 @@ const ExperienceSectionFrame = styled.div`
 
 const ExperienceSection = styled.div``;
 const ExperienceSectionItem = styled.div`
-  height: 178px;
+  min-height: 178px;
   border-bottom: 1px solid #222222;
   display: flex;
 `;
