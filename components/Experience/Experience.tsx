@@ -81,6 +81,6 @@ const DesignationText = styled(Text)`
   font-size: 18px;
 `;
 
-const Space = styled.div`
+export const Space = styled.div`
   margin-top: 20px;
 `;

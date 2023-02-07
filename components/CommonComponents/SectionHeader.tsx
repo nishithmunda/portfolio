@@ -1,17 +1,37 @@
-import styled from "styled-components";
+import { type } from "os";
+import { ReactNode } from "react";
+import styled, { css } from "styled-components";
 
+type Direction = "top" | "bottom";
 interface Prop {
-  children: string;
+  children: string | ReactNode;
+  direction?: Direction;
 }
-export function SectionHeader({ children }: Prop) {
+export function SectionHeader({ children, direction }: Prop) {
   return (
-    <SectionHeaderContainer>
+    <SectionHeaderContainer direction={direction}>
       <SectionTitle>{children}</SectionTitle>
     </SectionHeaderContainer>
   );
 }
 
-const SectionHeaderContainer = styled.div`
+type SectionHeaderProps = {
+  direction?: Direction;
+};
+
+function getDirection(dir: Direction) {
+  let direction = {
+    bottom: css`
+      top: 0;
+    `,
+    top: css`
+      bottom: 0;
+    `,
+  };
+
+  return direction[dir];
+}
+const SectionHeaderContainer = styled.div<SectionHeaderProps>`
   height: 61px;
   display: flex;
   align-items: center;
@@ -19,11 +39,16 @@ const SectionHeaderContainer = styled.div`
   margin-bottom: 40px;
   &:after {
     position: absolute;
-    bottom: 0;
+    ${(prop) =>
+      prop.direction
+        ? getDirection(prop.direction)
+        : css`
+            bottom: 0;
+          `};
     content: "";
     width: 100%;
     height: 4px;
-    background-color: #FFF;
+    background-color: #fff;
   }
 `;
 

@@ -1,6 +1,10 @@
+import { useState } from "react";
 import styled from "styled-components";
+import { DownloadIcon } from "../../icons/DownloadIcon";
 
 export function NameSection() {
+  const [activeDownload, setActiveDownload] = useState<boolean>(false);
+
   return (
     <NameSectionContainer>
       <NameSectionFrame>
@@ -16,7 +20,23 @@ export function NameSection() {
             Transforming data into the graphical interface & layouts schema for
             React applications
           </SummaryText>
-          <DownloadButton>Download Resume</DownloadButton>
+          <Anchor
+            href="https://drive.google.com/file/d/1FuCi8cte6SN3KwbfOnDwyHW3BjaoSwTN/view?usp=share_link"
+            target={"_blank"}
+          >
+            <DownloadButton
+              onMouseEnter={() => setActiveDownload(true)}
+              onMouseOut={() => setActiveDownload(false)}
+            >
+              <div>
+                Download Resume
+                <DownloadIcon
+                  style={{ pointerEvents: "none" }}
+                  active={activeDownload}
+                />
+              </div>
+            </DownloadButton>
+          </Anchor>
         </ResumeSection>
       </NameSectionFrame>
     </NameSectionContainer>
@@ -78,7 +98,9 @@ const ResumeSection = styled.div`
   justify-content: end;
   padding: 48px 0px 11px;
 `;
-const DownloadButton = styled.button`
+export const DownloadButton = styled.button`
+  display: flex;
+  align-items: center;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -91,6 +113,23 @@ const DownloadButton = styled.button`
   opacity: 1;
   border-radius: 6px;
   border: none;
+  div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    transition: padding 0.5s;
+  }
+  &:hover {
+    background: #000;
+    color: #fff;
+    border: 1px solid #4b65a1;
+    border-bottom: 3px solid #4b65a1;
+    div {
+      padding: 25px;
+    }
+  }
 `;
 
-
+export const Anchor = styled.a``;

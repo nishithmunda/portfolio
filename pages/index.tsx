@@ -26,7 +26,7 @@ function Home() {
       <Experience />
       <GitHub/>
       <ContactSection/>
-      <Header />
+      <Header mode="footer"/>
     </PortFolio>
   );
 }

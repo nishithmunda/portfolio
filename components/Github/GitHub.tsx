@@ -1,11 +1,13 @@
+import { useState } from "react";
 import styled from "styled-components";
 const bg = require("../../Assets/background.jpg");
 import Image from "next/image";
-import { useRouter } from "next/router";
-import Link from "next/link";
+import { GitHubIcon } from "../../icons/GitHubIcon";
+
+import { Anchor, DownloadButton } from "../NameSection/NameSection";
 
 export function GitHub() {
-  const router = useRouter();
+  const [activeDownload, setActiveDownload] = useState<boolean>(false);
   return (
     <ImageContainer>
       <ImageFrame>
@@ -14,11 +16,20 @@ export function GitHub() {
             Development <br /> Repository
           </HeadingText>
           <Text>It currently has around 5 best projects</Text>
-          <GitButton>
-            <Link href={`https://github.com/nishithmunda`}>
-              <a target="_blank">Visit My Github</a>
-            </Link>
-          </GitButton>
+          <Anchor href="https://github.com/nishithmunda" target={"_blank"}>
+            <GitButton
+              onMouseEnter={() => setActiveDownload(true)}
+              onMouseOut={() => setActiveDownload(false)}
+            >
+              <div>
+                Visit My Github
+                <GitHubIcon
+                  style={{ pointerEvents: "none" }}
+                  active={activeDownload}
+                />
+              </div>
+            </GitButton>
+          </Anchor>
         </GitInfo>
         <Image src={bg} layout="fill" objectFit="cover" />
       </ImageFrame>
@@ -61,20 +72,7 @@ export const HeadingText = styled.div`
   font-size: 40px;
   margin: 0 0 20px 0;
 `;
-export const GitButton = styled.button`
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  background: #fff;
-  cursor: pointer;
-  color: #000;
-  width: 310px;
-  height: 49px;
-  opacity: 1;
-  border-radius: 6px;
-  border: none;
-`;
+export const GitButton = styled(DownloadButton)``;
 export const Text = styled.div`
   color: #ffff;
   font-family: "Plus Jakarta Sans", sans-serif;

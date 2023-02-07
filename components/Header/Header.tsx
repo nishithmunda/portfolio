@@ -3,23 +3,30 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 import { LinkedIn } from "../../icons/LinkedIn";
 
-export function Header() {
+type HeaderType = "footer" | "header";
+
+interface Props {
+  mode?: HeaderType;
+}
+export function Header({ mode }: Props) {
   let router = useRouter();
   return (
-    <HeaderContainer>
-      <HeaderFrame>
-        <Logo></Logo>
-        <Media>
-          <MediaItem>
-            <Link href={`https://github.com/nishithmunda`}>
-              <a target="_blank">
-                <LinkedIn />
-              </a>
-            </Link>
-          </MediaItem>
-        </Media>
-      </HeaderFrame>
-    </HeaderContainer>
+    <>
+      {mode === "footer" && <HorizontalLine />}
+      <HeaderContainer>
+        <HeaderFrame>
+          <Logo></Logo>
+          <Media>
+            <MediaItem
+              href="https://www.linkedin.com/in/nishithmunda/"
+              target={"_blank"}
+            >
+              <LinkedIn />
+            </MediaItem>
+          </Media>
+        </HeaderFrame>
+      </HeaderContainer>
+    </>
   );
 }
 
@@ -50,3 +57,10 @@ const Media = styled.div`
 `;
 
 const MediaItem = styled.a``;
+
+const HorizontalLine = styled.hr`
+  margin-top: 30px;
+  background: #222222;
+  border: none;
+  height: 1px;
+`;

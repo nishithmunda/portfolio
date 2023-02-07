@@ -32,7 +32,7 @@ export const experience = [
     summary: [
       `Developed a Content library to share tutor notes and videos, using React and styled-components, which has
        been used by more than 5000 people.`,
-      `Contributed to Wiuall’s Win-D design system.`,
+      `Contributed to Winall’s (Win-D) design system.`,
       `Built an announcement system using Micro Frontend that tutors could use to send announcements to their
        students.`,
       `Created a Fee Management system using React, Redux, and styled-components for scheduling and managing
