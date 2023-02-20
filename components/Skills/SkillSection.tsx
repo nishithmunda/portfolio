@@ -14,8 +14,8 @@ export function SkillSection() {
           <SectionHeader>skills & projects</SectionHeader>
           <div style={{ display: "flex", width: "100%", gap: "10px" }}>
             <SkillList>
-              {projects.map((project) => (
-                <ProjectContainer>
+              {projects.map((project, index) => (
+                <ProjectContainer key={index}>
                   <ProjectHead>
                     <ProjectName>{project?.title}</ProjectName>
                     <Anchor href={project?.view} target={"_blank"}>
@@ -25,8 +25,8 @@ export function SkillSection() {
                     </Anchor>
                   </ProjectHead>
 
-                  {project?.summary?.map((summary) => (
-                    <ProjectSummary>{summary}</ProjectSummary>
+                  {project?.summary?.map((summary, index) => (
+                    <ProjectSummary key={index}>{summary}</ProjectSummary>
                   ))}
                 </ProjectContainer>
               ))}
