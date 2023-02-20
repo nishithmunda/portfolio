@@ -23,8 +23,8 @@ export function ContactCard({ list, iconType }: ContactCardProp) {
   return (
     <Card>
       <IconContainer>{iconRender(iconType)}</IconContainer>
-      {list.map((text) => (
-        <CardText>{text}</CardText>
+      {list.map((text, index) => (
+        <CardText key={index}>{text}</CardText>
       ))}
     </Card>
   );

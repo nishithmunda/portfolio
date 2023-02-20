@@ -7,8 +7,8 @@ export function Experience() {
     <ExperienceSectionContainer>
       <ExperienceSectionFrame>
         <SectionHeader>experience</SectionHeader>
-        {experience.map((exp) => (
-          <>
+        {experience.map((exp, index) => (
+          <div key={index}>
             <Space />
             <ExperienceSection>
               <ExperienceSectionItem>
@@ -20,18 +20,18 @@ export function Experience() {
                   <DesignationText>{exp?.company?.designation}</DesignationText>
                 </ExperienceCompany>
                 <ExperienceSummary>
-                  {exp?.summary.map((text) => {
+                  {exp?.summary.map((text, index) => {
                     return (
-                      <>
+                      <div key={index}>
                         <Text> - {text}</Text>
                         <Space />
-                      </>
+                      </div>
                     );
                   })}
                 </ExperienceSummary>
               </ExperienceSectionItem>
             </ExperienceSection>
-          </>
+          </div>
         ))}
       </ExperienceSectionFrame>
     </ExperienceSectionContainer>

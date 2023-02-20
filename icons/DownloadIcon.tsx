@@ -22,16 +22,16 @@ export const DownloadIcon = ({ active, style }: Props) => {
         r="96"
         fill="none"
         stroke={active ? "#fff" : "#000000"}
-        stroke-miterlimit="10"
-        stroke-width="16"
+        strokeMiterlimit="10"
+        strokeWidth="16"
       ></circle>
       <polyline
         points="94.1 134.1 128 168 161.9 134.1"
         fill="none"
         stroke={active ? "#fff" : "#000000"}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="16"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
       ></polyline>
       <line
         x1="128"
@@ -40,9 +40,9 @@ export const DownloadIcon = ({ active, style }: Props) => {
         y2="168"
         fill="none"
         stroke={active ? "#fff" : "#000000"}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="16"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
       ></line>
     </svg>
   );

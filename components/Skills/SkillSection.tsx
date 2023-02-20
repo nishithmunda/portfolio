@@ -18,8 +18,8 @@ export function SkillSection() {
                 <SkillImage />
               </SVGContainer>
               <ItemContainer>
-                {skill.map((val) => (
-                  <SkillCardItem>
+                {skill.map((val, index) => (
+                  <SkillCardItem key={index}>
                     <SkillIcon>
                       <Image src={val?.icon} layout="fill" objectFit="cover" />
                     </SkillIcon>

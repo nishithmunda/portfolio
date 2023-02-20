@@ -24,13 +24,15 @@ function Home() {
       <ProfileImage />
       <SkillSection />
       <Experience />
-      <GitHub/>
-      <ContactSection/>
-      <Header mode="footer"/>
+      <GitHub />
+      <ContactSection />
+      <Header mode="footer" />
     </PortFolio>
   );
 }
 
 export default Home;
 
-const PortFolio = styled.div``;
+const PortFolio = styled.div`
+
+    background-color: rgb(0, 5, 15);`;
