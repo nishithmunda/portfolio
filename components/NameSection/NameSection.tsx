@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { DownloadIcon } from "../../icons/DownloadIcon";
+import { resumeLink } from "../data";
 
 export function NameSection() {
   const [activeDownload, setActiveDownload] = useState<boolean>(false);
@@ -21,7 +22,7 @@ export function NameSection() {
             React applications
           </SummaryText>
           <Anchor
-            href="https://drive.google.com/file/d/1FuCi8cte6SN3KwbfOnDwyHW3BjaoSwTN/view?usp=share_link"
+            href={resumeLink}
             target={"_blank"}
           >
             <DownloadButton

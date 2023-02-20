@@ -49,3 +49,5 @@ export const experience = [
     ],
   },
 ];
+
+export let resumeLink = "https://drive.google.com/file/d/1ikd0GLX_qcfDspEzCvn4SXl9N_1HNCU4/view?usp=share_link"

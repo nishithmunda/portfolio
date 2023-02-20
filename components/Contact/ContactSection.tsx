@@ -5,6 +5,7 @@ import { DownloadIcon } from "../../icons/DownloadIcon";
 import { SectionHeader } from "../CommonComponents/SectionHeader";
 import { Anchor, DownloadButton } from "../NameSection/NameSection";
 import { ContactCard } from "./ContactCard";
+import { resumeLink } from "../data";
 
 export function ContactSection() {
   const [activeDownload, setActiveDownload] = useState<boolean>(false);
@@ -27,7 +28,7 @@ export function ContactSection() {
               />
             </CardContainer>
             <Anchor
-              href="https://drive.google.com/file/d/1FuCi8cte6SN3KwbfOnDwyHW3BjaoSwTN/view?usp=share_link"
+              href={resumeLink}
               target={"_blank"}
             >
               <DownloadButton
