@@ -5,6 +5,7 @@ import { projects, skill } from "../data";
 import Image from "next/image";
 import { ViewIcon } from "../../icons/ViewIcon";
 import { Anchor } from "../NameSection/NameSection";
+import { Space } from "../Experience/Experience";
 
 export function SkillSection() {
   return (
@@ -12,10 +13,11 @@ export function SkillSection() {
       <SkillSectionContainer>
         <SkillSectionFrame>
           <SectionHeader>skills & projects</SectionHeader>
-          <div style={{ display: "flex", width: "100%", gap: "10px" }}>
+          <SkillProjectContainer>
             <SkillList>
               {projects.map((project, index) => (
                 <ProjectContainer key={index}>
+                  <Space />
                   <ProjectHead>
                     <ProjectName>{project?.title}</ProjectName>
                     <Anchor href={project?.view} target={"_blank"}>
@@ -47,7 +49,7 @@ export function SkillSection() {
                 ))}
               </ItemContainer>
             </SkillCard>
-          </div>
+          </SkillProjectContainer>
         </SkillSectionFrame>
       </SkillSectionContainer>
     </>
@@ -66,11 +68,18 @@ const SkillSectionFrame = styled.div`
   @media (min-width: 1920px) {
     max-width: 1366px;
   }
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const SkillList = styled.div`
   width: 40%;
   height: 650px;
+  @media (max-width: 600px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 const SkillIcon = styled.div`
   position: relative;
@@ -89,6 +98,7 @@ const SkillCard = styled.div`
   margin-left: auto;
   display: flex;
   width: 50%;
+  max-width: 536px;
   height: auto;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px;
@@ -102,9 +112,15 @@ const SkillCard = styled.div`
     background-color: rgb(0, 14, 41);
   }
 `;
+
+const SkillProjectContainer = styled.div`
+  display: flex;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+`;
 const ItemContainer = styled.div`
   //Wrap Items
-  max-width: 536px;
   min-height: 334px;
   height: auto;
   width: 100%;

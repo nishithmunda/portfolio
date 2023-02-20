@@ -21,10 +21,7 @@ export function NameSection() {
             Transforming data into the graphical interface & layouts schema for
             React applications
           </SummaryText>
-          <Anchor
-            href={resumeLink}
-            target={"_blank"}
-          >
+          <Anchor href={resumeLink} target={"_blank"}>
             <DownloadButton
               onMouseEnter={() => setActiveDownload(true)}
               onMouseOut={() => setActiveDownload(false)}
@@ -49,6 +46,9 @@ const NameSectionContainer = styled.div`
   justify-content: center;
   width: 100%;
   height: 210px;
+  @media (max-width: 600px) {
+    height: auto;
+  }
 `;
 
 const NameSectionFrame = styled.div`
@@ -61,11 +61,20 @@ const NameSectionFrame = styled.div`
   @media (min-width: 1920px) {
     max-width: 1366px;
   }
+  @media (max-width: 600px) {
+    width: 100%;
+    flex-direction: column;
+  }
 `;
 
 const TitleBox = styled.div`
   width: 598px;
   height: 210px;
+  
+  @media (max-width: 600px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 const NameText = styled.div`
   color: #ffff;
@@ -130,6 +139,9 @@ export const DownloadButton = styled.button`
     div {
       padding: 25px;
     }
+  }
+  @media (max-width: 600px) {
+    width: 100%;
   }
 `;
 

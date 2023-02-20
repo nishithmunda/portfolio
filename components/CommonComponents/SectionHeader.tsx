@@ -49,6 +49,14 @@ const SectionHeaderContainer = styled.div<SectionHeaderProps>`
     width: 100%;
     height: 4px;
     background-color: #fff;
+
+    @media (max-width: 600px) {
+      bottom: -10px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    height: auto;
   }
 `;
 

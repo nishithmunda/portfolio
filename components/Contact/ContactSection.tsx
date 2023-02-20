@@ -65,6 +65,9 @@ const ContactSectionFrame = styled.div`
   @media (min-width: 1920px) {
     max-width: 1366px;
   }
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 const SVGContainer = styled.div`
   display: flex;
@@ -78,10 +81,16 @@ const ContactDetailContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media(max-width: 600px){
+    flex-direction : column-reverse;
+  }
 `;
 
 const ContactDetail = styled.div`
   width: 60%;
+  @media(max-width: 600px){
+    width: 100%;
+  }
 `;
 const CardContainer = styled.div`
   display: flex;

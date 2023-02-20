@@ -52,6 +52,9 @@ const ImageFrame = styled.div`
   @media (min-width: 1920px) {
     max-width: 1366px;
   }
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const GitInfo = styled.div`
@@ -63,6 +66,9 @@ export const GitInfo = styled.div`
   bottom: 0;
   margin: auto 0;
   z-index: 1;
+  @media (max-width: 600px) {
+    right: unset;
+  }
 `;
 export const HeadingText = styled.div`
   color: #ffff;

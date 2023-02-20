@@ -53,5 +53,8 @@ const ImageFrame = styled.div`
   @media (min-width: 1920px) {
      max-width: 1366px;
   }
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 

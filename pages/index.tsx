@@ -35,4 +35,8 @@ export default Home;
 
 const PortFolio = styled.div`
 
-    background-color: rgb(0, 5, 15);`;
+    background-color: rgb(0, 5, 15);
+      @media (max-width: 600px) {
+    padding:0 20px;
+  }`;
+    
