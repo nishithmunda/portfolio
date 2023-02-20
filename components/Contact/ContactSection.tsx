@@ -95,6 +95,9 @@ const ContactDetail = styled.div`
 const CardContainer = styled.div`
   display: flex;
   gap: 20px;
+  @media(max-width: 600px){
+    flex-direction: column-reverse;
+  }
 `;
 const TitleText = styled.div`
   margin-top: 30px;

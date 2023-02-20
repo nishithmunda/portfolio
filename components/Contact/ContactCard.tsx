@@ -33,6 +33,9 @@ export function ContactCard({ list, iconType }: ContactCardProp) {
 const Card = styled.div`
   height: 220px;
   width: 35%;
+  @media(max-width: 600px){
+    width: 100%;
+  }
 `;
 
 const CardText = styled.div`

@@ -111,6 +111,10 @@ const SkillCard = styled.div`
     border: 1px solid rgba(97, 132, 214, 1);
     background-color: rgb(0, 14, 41);
   }
+  @media (max-width: 600px) {
+    margin-top: 25px;
+    width: 100%;
+  }
 `;
 
 const SkillProjectContainer = styled.div`
