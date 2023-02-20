@@ -1,17 +1,36 @@
 import styled from "styled-components";
 import { SkillImage } from "../../icons/SkillImage";
 import { SectionHeader } from "../CommonComponents/SectionHeader";
-import { skill } from "../data";
+import { projects, skill } from "../data";
 import Image from "next/image";
+import { ViewIcon } from "../../icons/ViewIcon";
+import { Anchor } from "../NameSection/NameSection";
 
 export function SkillSection() {
   return (
     <>
       <SkillSectionContainer>
         <SkillSectionFrame>
-          <SectionHeader>skills & expertise</SectionHeader>
-          <div style={{ display: "flex", width: "100%" }}>
-            <SkillList></SkillList>
+          <SectionHeader>skills & projects</SectionHeader>
+          <div style={{ display: "flex", width: "100%", gap: "10px" }}>
+            <SkillList>
+              {projects.map((project) => (
+                <ProjectContainer>
+                  <ProjectHead>
+                    <ProjectName>{project?.title}</ProjectName>
+                    <Anchor href={project?.view} target={"_blank"}>
+                      <ViewButton>
+                        <ViewIcon />
+                      </ViewButton>
+                    </Anchor>
+                  </ProjectHead>
+
+                  {project?.summary?.map((summary) => (
+                    <ProjectSummary>{summary}</ProjectSummary>
+                  ))}
+                </ProjectContainer>
+              ))}
+            </SkillList>
             <SkillCard>
               {/* Absolute Image   */}
               <SVGContainer>
@@ -50,7 +69,7 @@ const SkillSectionFrame = styled.div`
 `;
 
 const SkillList = styled.div`
-  width: 50%;
+  width: 40%;
   height: 650px;
 `;
 const SkillIcon = styled.div`
@@ -67,6 +86,7 @@ const SkillName = styled.div`
   font-size: 16px;
 `;
 const SkillCard = styled.div`
+  margin-left: auto;
   display: flex;
   width: 50%;
   height: auto;
@@ -111,4 +131,39 @@ const SVGContainer = styled.div`
   position: absolute;
   top: 0;
   right: 0;
+`;
+
+//Project Section
+
+const ProjectContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 30%;
+  border-bottom: 1px solid rgba(64, 64, 64, 0.65); ;
+`;
+const ProjectHead = styled.div`
+  display: flex;
+  align-item: center;
+  justify-content: space-between;
+`;
+const ProjectName = styled.span`
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: -0.6px;
+`;
+const ViewButton = styled.button`
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+`;
+const ProjectSummary = styled.p`
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #fff;
 `;

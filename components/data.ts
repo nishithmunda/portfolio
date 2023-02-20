@@ -1,3 +1,20 @@
+export const projects = [
+  {
+    title: "Navigation Router",
+    summary: [`A client side routing library using React and the Browser Navigation API for single-page-
+    application.`],
+    view: 'https://router-example-swart.vercel.app/'
+  }, {
+    title: "Movies Hub",
+    summary: [`Demonstration of a movie and music streaming platform using Micro Frontend, React, and
+    CSS .`, `Implemented micro frontend architecture to make it easier to manage .`],
+    view: 'https://micro-frontend-container.netlify.app/'
+  }, {
+    title: "CURRENCY CONVERTOR",
+    summary: [`Demonstration of a currency converter application using React, CSS and exchange rate APIs .`]
+    , view: "https://currency-convertor-three-neon.vercel.app/"
+  }
+]
 export const skill = [
   {
     icon: "/html.png",
