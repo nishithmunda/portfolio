@@ -16,7 +16,7 @@ export function ContactCard({ list, iconType }: ContactCardProp) {
       case "phone":
         return <PhoneIcon />;
       default:
-        return "";
+        return " ";
     }
   }
 
